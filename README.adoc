@@ -31,7 +31,7 @@ Follow the rules to discover what works.
 Break the rules to discover what doesn't work (or works when you don't expect it to).
 *Don't be afraid to experiment!*
 
-Using this approach, you'll be able to quickly become familiar with CDI, what works, what doesn't work, and be ready to start putting it into practice.
+Using this approach, you'll be able to quickly become familiar with Java EE, what works, what doesn't work, and be ready to start putting it into practice.
 
 ////
 Additional defenses:
@@ -45,7 +45,7 @@ This kit provides a single web application (war) project with a Maven build.
 To start, it contains two Java classes:
 
 - PingServlet.java -- A Servlet to test that the web application is deployed.
-- SetupTest.java -- An Arquillian test class to demonstrate Arquillian is working properly.
+- SmokeTest.java -- An Arquillian test case to demonstrate Arquillian is working properly.
 
 Where it goes from there is up to you.
 
@@ -56,9 +56,8 @@ Where it goes from there is up to you.
 We recommend that you important the Maven project into your IDE.
 You'll unlock the most functionality by importing the Maven project since it provides access to profiles that can be used to run the test on different containers.
 
-Once the project is imported, you can navigate to the test class, CDIBeanTest, and run it just like you would any JUnit test.
-Of course, the test will fail because the Java class hasn't yet been declared as a CDI bean.
-That's an exercise for you to correct.
+Once the project is imported, you can navigate to the test class, SmokeTest, and run it just like you would any JUnit test.
+If it works, you're ready to start testing!
 
 === Running the Tests using Maven
 
@@ -70,10 +69,8 @@ To run the tests on TomEE (managed mode) using Maven, simply run:
 
  $ mvn test -Parquillian-tomee.managed
 
+////
 === Building a local TomEE installation
 
  $ mvn tomee:run -Dtomee-plugin.skipCurrentProject=true
-
-//== Exercises
-//
-//TODO
+////
