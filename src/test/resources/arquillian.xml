@@ -28,6 +28,7 @@
       <!-- WARNING setting simpleLog will overwrite logging.properties on server -->
       <!--<property name="simpleLog">true</property>-->
     </configuration>
+    <protocol type="Servlet 3.0"/>
   </container>
   <container qualifier="tomee.remote">
     <configuration>
@@ -36,5 +37,6 @@
       <property name="appWorkingDir">target/test-apache-tomee-workdir</property>
       <property name="removeUnusedWebapps">false</property>
     </configuration>
+    <protocol type="Servlet 3.0"/>
   </container>
 </arquillian>
