@@ -1,4 +1,4 @@
-= Test Lab Kit
+= Base Lab Kit
 // Settings
 ifdef::env-github,env-browser[]
 :toc: preamble
@@ -11,12 +11,14 @@ endif::[]
 :uri-arquillian: http://arquillian.org
 :uri-tomee: http://tomee.apache.org
 
-This lab kit uses {uri-arquillian}[Arquillian] as a learning device to study how Java EE works.
-Arquillian executes each test case inside a real container (in our case, {uri-tomee}[Apache TomEE]).
-You define the deployment archive in the test class, so you have full control over the scenario you want to test (or break).
-This is where theory turns into practice.
+This is the base, work-in-progress lab kit for the Apache TomEE training.
+The lab kit uses {uri-arquillian}[Arquillian] as a learning device to study how Java EE works.
 
 == Motivation
+
+Arquillian executes each test method inside a real container (in our case, {uri-tomee}[Apache TomEE]).
+You define the deployment archive in the test case, so you have full control over the scenario you want to test (or break).
+This is where theory turns into practice.
 
 Arquillian is ideal for this phase of learning because it provides a tight loop of experimentation.
 It allowing you to focus on how components are defined, resolved, and executed without having to mess around with (or messing up) the details of creating and deploying an application.
