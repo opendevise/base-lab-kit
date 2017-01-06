@@ -8,14 +8,10 @@ import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import javax.enterprise.inject.spi.BeanManager;
 import java.util.logging.Logger;
 
-import static org.hamcrest.Matchers.*;
-import static org.junit.Assert.assertThat;
-
 @RunWith(Arquillian.class)
-public class SetupTest {
+public class SmokeTest {
     public static @Deployment Archive<?> createTestArchive() {
         return ShrinkWrap.create(WebArchive.class);
     }
