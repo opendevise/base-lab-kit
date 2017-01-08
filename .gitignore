@@ -3,5 +3,7 @@
 /.settings/
 /.idea/
 /*.iml
+/.gradle/
+/build/
 /servers/
 /target/

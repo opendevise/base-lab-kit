@@ -73,6 +73,16 @@ To run the tests in a terminal on TomEE (managed mode) using Maven, simply run:
 
  $ mvn test -Parquillian=tomee-managed
 
+=== Running the tests using Gradle
+
+To run the tests in a terminal on TomEE (embedded mode) using Gradle, simply run:
+
+ $ ./gradlew test
+
+To run the tests in a terminal on TomEE (managed mode) using Gradle, simply run:
+
+ $ ./gradlew test -Parquillian=tomee-managed
+
 == Additional tools
 
 === Building a local TomEE installation using Maven

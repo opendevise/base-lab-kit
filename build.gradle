@@ -1,0 +1,30 @@
+group = 'com.tomitribe.training'
+// NOTE artifact name defined in settings.gradle
+version = '1.0.0-SNAPSHOT'
+description = "The base lab kit for the Apache TomEE training course"
+
+apply plugin: 'war'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+ext {
+    arquillianQualifier = project.hasProperty('arquillian') ? project.property('arquillian') : 'tomee-embedded'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    providedCompile 'org.apache.tomee:javaee-api:7.0-1'
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.jboss.arquillian.junit:arquillian-junit-container:1.1.12.Final'
+    testRuntime "org.apache.tomee:arquillian-${arquillianQualifier.replaceFirst('-managed$', '-remote')}:7.0.2"
+}
+
+test {
+    dependsOn 'cleanTest' // NOTE enable dependency on cleanTest to force tests to rerun each time
+    systemProperties = [ 'arquillian.launch': arquillianQualifier ]
+    testLogging { events "passed", "skipped", "failed", "standardOut", "standardError" }
+}
