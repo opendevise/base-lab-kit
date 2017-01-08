@@ -33,8 +33,7 @@ public class ApparatusTest {
                 "Hello from test running in " + Thread.currentThread().getContextClassLoader());
     }
 
-    @RunAsClient
-    @Test
+    @RunAsClient @Test
     public void shouldRespondToPing(@ArquillianResource URL webappUrl) throws Exception {
         URL pingUrl = new URL(webappUrl + "ping");
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(pingUrl.openStream()))) {
