@@ -71,7 +71,7 @@ To run the tests in a terminal on TomEE (embedded mode) using Maven, simply run:
 
 To run the tests in a terminal on TomEE (managed mode) using Maven, simply run:
 
- $ mvn test -Parquillian-tomee.managed
+ $ mvn test -Parquillian=tomee.managed
 
 == Additional tools
 

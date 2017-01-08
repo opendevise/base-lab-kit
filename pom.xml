@@ -82,7 +82,7 @@
     </build>
     <profiles>
         <profile>
-            <id>arquillian-tomee.embedded</id>
+            <id>arquillian=tomee.embedded</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
@@ -102,7 +102,7 @@
             </dependencies>
         </profile>
         <profile>
-            <id>arquillian-tomee.managed</id>
+            <id>arquillian=tomee.managed</id>
             <dependencies>
                 <dependency>
                     <groupId>org.apache.tomee</groupId>
@@ -131,7 +131,7 @@
             </build>
         </profile>
         <profile>
-            <id>arquillian-tomee.remote</id>
+            <id>arquillian=tomee.remote</id>
             <dependencies>
                 <dependency>
                     <groupId>org.apache.tomee</groupId>
@@ -161,7 +161,7 @@
         </profile>
         <profile>
             <!-- this profile is for use in IDEA, which can control arquillian.launch -->
-            <id>arquillian-tomee.managed-or-remote</id>
+            <id>arquillian=tomee.managed-or-remote</id>
             <dependencies>
                 <dependency>
                     <groupId>org.apache.tomee</groupId>
