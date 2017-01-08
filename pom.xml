@@ -82,7 +82,7 @@
     </build>
     <profiles>
         <profile>
-            <id>arquillian=tomee.embedded</id>
+            <id>arquillian=tomee-embedded</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
@@ -102,7 +102,7 @@
             </dependencies>
         </profile>
         <profile>
-            <id>arquillian=tomee.managed</id>
+            <id>arquillian=tomee-managed</id>
             <dependencies>
                 <dependency>
                     <groupId>org.apache.tomee</groupId>
@@ -123,7 +123,7 @@
                         <artifactId>maven-surefire-plugin</artifactId>
                         <configuration>
                             <systemPropertyVariables>
-                                <arquillian.launch>tomee.managed</arquillian.launch>
+                                <arquillian.launch>tomee-managed</arquillian.launch>
                             </systemPropertyVariables>
                         </configuration>
                     </plugin>
@@ -131,7 +131,7 @@
             </build>
         </profile>
         <profile>
-            <id>arquillian=tomee.remote</id>
+            <id>arquillian=tomee-remote</id>
             <dependencies>
                 <dependency>
                     <groupId>org.apache.tomee</groupId>
@@ -152,7 +152,7 @@
                         <artifactId>maven-surefire-plugin</artifactId>
                         <configuration>
                             <systemPropertyVariables>
-                                <arquillian.launch>tomee.remote</arquillian.launch>
+                                <arquillian.launch>tomee-remote</arquillian.launch>
                             </systemPropertyVariables>
                         </configuration>
                     </plugin>
@@ -160,8 +160,8 @@
             </build>
         </profile>
         <profile>
-            <!-- this profile is for use in IDEA, which can control arquillian.launch -->
-            <id>arquillian=tomee.managed-or-remote</id>
+            <!-- this profile is for use in IDEA, which can control the arquillian.xml qualifier -->
+            <id>arquillian=tomee-managed-or-remote</id>
             <dependencies>
                 <dependency>
                     <groupId>org.apache.tomee</groupId>
