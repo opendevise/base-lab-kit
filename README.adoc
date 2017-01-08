@@ -77,7 +77,7 @@ To run the tests in a terminal on TomEE (managed mode) using Maven, simply run:
 
 === Building a local TomEE installation using Maven
 
-You can use this project to generate a TomEE installation.
+You can use this project to generate a local TomEE installation.
 This functionality is provided by the {uri-tomee-maven}[TomEE Maven plugin].
 Simply run the following command from a terminal:
 
