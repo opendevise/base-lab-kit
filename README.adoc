@@ -8,6 +8,7 @@ ifdef::env-github[:!toc-title:]
 // URIs:
 :uri-arquillian: http://arquillian.org
 :uri-tomee: http://tomee.apache.org
+:uri-tomee-maven: http://tomee.apache.org/tomee-maven-plugin.html
 
 This is the base, work-in-progress lab kit for the Apache TomEE training.
 The training leverages the combination of {uri-arquillian}[Arquillian] and {uri-tomee}[Apache TomEE 7] as a learning device to study how Java EE 7 works.
@@ -74,9 +75,10 @@ To run the tests in a terminal on TomEE (managed mode) using Maven, simply run:
 
 == Additional tools
 
-=== Building a local TomEE installation
+=== Building a local TomEE installation using Maven
 
-You can also use this project to generate a TomEE installation.
+You can use this project to generate a TomEE installation.
+This functionality is provided by the {uri-tomee-maven}[TomEE Maven plugin].
 Simply run the following command from a terminal:
 
  $ mvn tomee:build -Dtomee-plugin.skipCurrentProject=true
