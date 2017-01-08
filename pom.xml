@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.tomitribe.training</groupId>
   <artifactId>base-lab-kit</artifactId>
-  <description>The base lab kit for the TomEE training</description>
+  <description>The base lab kit for the Apache TomEE training</description>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>war</packaging>
   <dependencyManagement>

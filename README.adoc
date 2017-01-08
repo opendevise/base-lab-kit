@@ -1,18 +1,16 @@
-= Base Lab Kit
-// Settings
-ifdef::env-github,env-browser[]
+= Apache TomEE Training: Base Lab Kit
+Tomitribe
+// Settings:
+:icons: font
 :toc: preamble
 :toclevels: 1
-endif::[]
-ifdef::env-github[]
-:!toc-title:
-endif::[]
-// URIs
+ifdef::env-github[:!toc-title:]
+// URIs:
 :uri-arquillian: http://arquillian.org
 :uri-tomee: http://tomee.apache.org
 
 This is the base, work-in-progress lab kit for the Apache TomEE training.
-The lab kit uses {uri-arquillian}[Arquillian] as a learning device to study how Java EE works.
+The training leverages the combination of {uri-arquillian}[Arquillian] and {uri-tomee}[Apache TomEE 7] as a learning device to study how Java EE 7 works.
 
 == Motivation
 
@@ -41,36 +39,49 @@ Additional defenses:
 
 == Overview
 
-This kit provides a single web application (war) project with a Maven build.
+This project provides a Java EE 7 web application (war) with a Maven build.
 To start, it contains two Java classes:
 
-- PingServlet.java -- A Servlet to test that the web application is deployed.
-- SmokeTest.java -- An Arquillian test case to demonstrate Arquillian is working properly.
+- link:src/main/java/com/tomitribe/training/setup/PingServlet.java[PingServlet.java] -- A Servlet (accessible at the context path `/ping`) to verify the web application is deployed. 
+- link:src/test/java/com/tomitribe/training/setup/ApparatusTest.java[ApparatusTest.java] -- An Arquillian test case to demonstrate Arquillian is working properly with TomEE Embedded.
 
 Where it goes from there is up to you.
 
-== Usage
+== Setup
 
-=== Importing the Project into an IDE
+=== Importing the project into an IDE
 
-We recommend that you important the Maven project into your IDE.
+We recommend that you import the Maven project into your IDE (i.e., IntelliJ IDEA Ultimate or Eclipse IDE for Java EE Developers).
 You'll unlock the most functionality by importing the Maven project since it provides access to profiles that can be used to run the test on different containers.
 
-Once the project is imported, you can navigate to the test class, SmokeTest, and run it just like you would any JUnit test.
-If it works, you're ready to start testing!
+== Usage
 
-=== Running the Tests using Maven
+=== Running the tests in the IDE
 
-To run the tests on TomEE (embedded mode) using Maven, simply run:
+Once the project is imported, you can navigate to the test case, ApparatusTest, and run it just like you would any JUnit test.
+//If it passes then everything is working correctly!
+If it passes, you're ready to start testing!
+
+=== Running the tests using Maven
+
+To run the tests in a terminal on TomEE (embedded mode) using Maven, simply run:
 
  $ mvn test
 
-To run the tests on TomEE (managed mode) using Maven, simply run:
+To run the tests in a terminal on TomEE (managed mode) using Maven, simply run:
 
  $ mvn test -Parquillian-tomee.managed
 
-////
+== Additional tools
+
 === Building a local TomEE installation
 
- $ mvn tomee:run -Dtomee-plugin.skipCurrentProject=true
-////
+You can also use this project to generate a TomEE installation.
+Simply run the following command from a terminal:
+
+ $ mvn tomee:build -Dtomee-plugin.skipCurrentProject=true
+
+The server will be extracted to the path [.path]_servers/apache-tomee-webprofile-7.0.2_.
+You can move this folder a location where you want TomEE installed.
+
+TIP: Use the properties at the bottom of [.path]_pom.xml_ to download a different TomEE profile (e.g., plus) or version.
