@@ -13,6 +13,7 @@ import org.junit.runner.RunWith;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
+import java.net.URI;
 import java.net.URL;
 import java.util.logging.Logger;
 
@@ -34,13 +35,13 @@ public class ApparatusTest {
     }
 
     @RunAsClient @Test
-    public void shouldRespondToPing(@ArquillianResource URL webappUrl) throws Exception {
-        URL pingUrl = new URL(webappUrl + "ping");
+    public void shouldRespondToPing(@ArquillianResource URI webappUri) throws Exception {
+        URL pingUrl = webappUri.resolve("ping").toURL();
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(pingUrl.openStream()))) {
             assertThat(reader.readLine(), is(equalTo("here")));
         }
         catch (FileNotFoundException e) {
-            fail("Server returned a 404 response for the following path: /ping");
+            fail("Server returned a 404 response for the following URL: " + pingUrl);
         }
     }
 }
