@@ -33,7 +33,7 @@
     <container qualifier="tomee-remote">
         <configuration>
             <!-- NOTE use a fake dir to force Arquillian to fail if TomEE isn't running -->
-            <property name="dir">/DOES_NOT_EXIST</property>
+            <property name="dir">/TOMEE_IS_NOT_RUNNING</property>
             <property name="appWorkingDir">target/test-apache-tomee-workdir</property>
             <property name="removeUnusedWebapps">false</property>
         </configuration>
