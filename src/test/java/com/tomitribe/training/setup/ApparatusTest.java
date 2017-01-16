@@ -24,14 +24,14 @@ import static org.junit.Assert.*;
 public class ApparatusTest {
     @Deployment
     public static Archive<?> createTestArchive() {
-        return ShrinkWrap.create(WebArchive.class)
+        return ShrinkWrap.create(WebArchive.class, "apparatus-test.war")
                 .addClasses(PingServlet.class);
     }
 
     @Test
     public void shouldSayHiFromContainer() throws Exception {
-        Logger.getLogger(getClass().getName()).info(
-                "Hello from test running in " + Thread.currentThread().getContextClassLoader());
+        Logger.getLogger(getClass().getName())
+                .info("Hello from test running in " + Thread.currentThread().getContextClassLoader());
     }
 
     @RunAsClient @Test
